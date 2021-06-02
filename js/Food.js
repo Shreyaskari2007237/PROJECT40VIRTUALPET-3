@@ -43,10 +43,10 @@ class Food{
           }
       }
       bedroom(){
-        background(bedroomImg,550,500);
+        background(bedroomImg,0,0);
       }
       garden(){
-        background(gardenImg,550,500);
+        background(gardenImg,0,0);
       }
       washroom(){
         background(washroomImg,550,500);

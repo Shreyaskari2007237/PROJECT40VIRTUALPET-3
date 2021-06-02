@@ -22,7 +22,7 @@ washroomImg=loadImage("virtual pet images/Wash Room.png");
 }
 
 function setup() {
-   database=firebase.database();
+  database=firebase.database();
 	createCanvas(500,500);
   dog = createSprite(250,250,5,5);
   dog.addImage(dogImg);
@@ -72,11 +72,7 @@ function draw() {
     dog.addImage(dogImg);
   }
   //function to update gameStates in database
-  function update(){
-    database.ref('/').update({
-      gameState:state
-    })
-  }
+  
   currentTime=hour();
   if (currentTime==(lastFed+1)){
       update("Playing");
@@ -124,6 +120,11 @@ function draw() {
     database.ref('/').update({
       Food:food.getFoodStock(),
     //  FeedTime:hour()
+    })
+  }
+  function update(state){
+    database.ref('/').update({
+      gameState:state
     })
   }
   
