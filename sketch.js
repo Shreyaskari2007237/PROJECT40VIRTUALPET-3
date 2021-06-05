@@ -119,7 +119,8 @@ function draw() {
     food.updateFoodStock(food.getFoodStock()-1);
     database.ref('/').update({
       Food:food.getFoodStock(),
-    //  FeedTime:hour()
+      fedTime:hour(),
+      gameState:"Hungry"
     })
   }
   function update(state){
